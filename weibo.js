@@ -2,7 +2,7 @@
 // @name         WeiBo自动发消息
 // @namespace    Jonchan
 // @version      2.2.6
-// @description  ---
+// @description  自动判断今天是否发送过微博，若未发生，自动发送一条微博
 // @author       Jon Chan
 // @match       *://weibo.com/*
 // @require      https://code.jquery.com/jquery-3.3.1.min.js
