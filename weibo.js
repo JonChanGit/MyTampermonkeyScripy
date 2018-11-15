@@ -69,7 +69,7 @@ function post() {
 function run() {
     'use strict';
     let time = isToday(getLastWeiBoTimeStr())
-    if (time) {
+    if (!time) {
         post()
     } else {
         console.warn('今日已经发送过微博')
