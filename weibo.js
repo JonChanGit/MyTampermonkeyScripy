@@ -54,15 +54,16 @@ function getContentFormBing() {
 function post() {
     'use strict';
     let content = 'xxx'
-    getContentFormBing()
-    // $.ajax({
-    //     url: 'https://weibo.com/aj/mblog/add',
-    //     type: 'POST',
-    //     data: `location=v6_content_home&text=$content&appkey=&style_type=1&pic_id=&tid=&pdetail=&mid=&isReEdit=false&rank=0&rankid=&module=stissue&pub_source=main_&pub_type=dialog&isPri=0&_t=0`,
-    //     success: function (resp) {
-    //         console.log(resp)
-    //     }
-    // })
+    // getContentFormBing()
+    $.ajax({
+        url: 'https://weibo.com/aj/mblog/add',
+        type: 'POST',
+        data: 'location=v6_content_home&text=' + content + '&appkey=&style_type=1&pic_id=&tid=&pdetail=&mid=&isReEdit=false&rank=0&rankid=&module=stissue&pub_source=main_&pub_type=dialog&isPri=0&_t=0',
+        success: function (resp) {
+            console.log(resp)
+            console.warn('成功发送微博')
+        }
+    })
 }
 
 function run() {
@@ -70,6 +71,8 @@ function run() {
     let time = isToday(getLastWeiBoTimeStr())
     if (time) {
         post()
+    } else {
+        console.warn('今日已经发送过微博')
     }
 }
 
